@@ -36,7 +36,7 @@ En Linux usa:
  En Windows usa: 
     `venv\Scripts\activate`
 
-    luego
+
 
 `pip install -r requirements.txt`
 
@@ -44,39 +44,31 @@ En Linux usa:
 
 Crea un archivo .env en la raíz del proyecto con las siguientes variables:
 
-`
+````
 USER=tu_usuario
 PASSWORD=tu_contraseña
 SECRET_KEY=tu_clave_secreta
 ALGORITHM=HS256
 ACCESS_TOKEN_EXPIRE_MINUTES=30
-`
-## Ejecuta la aplicación:
+````
 
-    `
-      uvicorn main:app --reload
-    `   
-o 
-`
-python main.py
-`
+## Ejecuta la aplicación:
+ 
+`python main.py`
+
     La API estará disponible en http://127.0.0.1:8000.
 ### Uso
 Autenticación
 Para acceder a los endpoints protegidos, primero debes autenticarte:
 
-`
-curl -X POST "http://127.0.0.1:8000/login" -d "username=tu_usuario&password=tu_contraseña"
-`
+`curl -X POST "http://127.0.0.1:8000/login" -d "username=tu_usuario&password=tu_contraseña"`
 
 Esto devolverá un token de acceso que debes incluir en las solicitudes subsiguientes como un encabezado Authorization.
 
 ## Subida de archivos
 Puedes subir archivos PDF o imágenes para extraer texto y códigos QR:
 
-`
-curl -X POST "http://127.0.0.1:8000/upload/" -H "Authorization: Bearer tu_token" -F "file=@ruta/al/archivo.pdf"
-`
+`curl -X POST "http://127.0.0.1:8000/upload/" -H "Authorization: Bearer tu_token" -F "file=@ruta/al/archivo.pdf"`
 
 La respuesta incluirá el texto extraído, cualquier código QR detectado y mensajes de diagnóstico.
 
@@ -88,7 +80,7 @@ La respuesta incluirá el texto extraído, cualquier código QR detectado y mens
 **GET /**: Verifica que la API está en funcionamiento.
 
 ## Ejemplo de respuesta
-`
+```
 {
   "status": "success",
   "message": "File processed successfully",
@@ -104,4 +96,4 @@ La respuesta incluirá el texto extraído, cualquier código QR detectado y mens
     ]
   }
 }
-`
+```
