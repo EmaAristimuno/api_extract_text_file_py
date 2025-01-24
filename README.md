@@ -58,9 +58,9 @@ ACCESS_TOKEN_EXPIRE_MINUTES=30
       uvicorn main:app --reload
     ```   
 o 
-    ```
-    python main.py
-    ```
+```
+python main.py
+```
     La API estará disponible en http://127.0.0.1:8000.
 ### Uso
 Autenticación
@@ -75,18 +75,18 @@ Esto devolverá un token de acceso que debes incluir en las solicitudes subsigui
 ## Subida de archivos
 Puedes subir archivos PDF o imágenes para extraer texto y códigos QR:
 
-    ```
-    curl -X POST "http://127.0.0.1:8000/upload/" -H "Authorization: Bearer tu_token" -F "file=@ruta/al/archivo.pdf"
-    ```
+```
+curl -X POST "http://127.0.0.1:8000/upload/" -H "Authorization: Bearer tu_token" -F "file=@ruta/al/archivo.pdf"
+```
 
-    La respuesta incluirá el texto extraído, cualquier código QR detectado y mensajes de diagnóstico.
+La respuesta incluirá el texto extraído, cualquier código QR detectado y mensajes de diagnóstico.
 
-## Endpoints
-POST /login: Autentica al usuario y devuelve un token de acceso.
+### Endpoints
+*POST /login*: Autentica al usuario y devuelve un token de acceso.
 
-POST /upload/: Sube un archivo para extraer texto y códigos QR. Requiere autenticación.
+*POST /upload/*: Sube un archivo para extraer texto y códigos QR. Requiere autenticación.
 
-GET /: Verifica que la API está en funcionamiento.
+*GET /*: Verifica que la API está en funcionamiento.
 
 ## Ejemplo de respuesta
 json
