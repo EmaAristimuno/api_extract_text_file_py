@@ -28,11 +28,15 @@ Esta es una API desarrollada con FastAPI que permite a los usuarios subir archiv
 
 ## Crea un entorno virtual e instala las dependencias:
 
-bash
 
-python -m venv venv
-source venv/bin/activate  # En Windows usa `venv\Scripts\activate`
-pip install -r requirements.txt
+    ```bash
+    python -m venv venv
+    source venv/bin/activate  
+
+ En Windows usa `venv\Scripts\activate`
+
+     ```bash
+    pip install -r requirements.txt
 
 ## Configura las variables de entorno:
 
@@ -48,27 +52,31 @@ ACCESS_TOKEN_EXPIRE_MINUTES=30
 
 ## Ejecuta la aplicación:
 
-bash
+    ```bash
+    uvicorn main:app --reload
+    La API estará disponible en http://127.0.0.1:8000.
 
-uvicorn main:app --reload
-La API estará disponible en http://127.0.0.1:8000.
+o 
+
+python main.py
 
 ## **Uso
 Autenticación
 Para acceder a los endpoints protegidos, primero debes autenticarte:
 
-bash
-
+ ```bash
 curl -X POST "http://127.0.0.1:8000/login" -d "username=tu_usuario&password=tu_contraseña"
+
 Esto devolverá un token de acceso que debes incluir en las solicitudes subsiguientes como un encabezado Authorization.
 
 ## Subida de archivos
 Puedes subir archivos PDF o imágenes para extraer texto y códigos QR:
 
-bash
+ ```bash
 
-curl -X POST "http://127.0.0.1:8000/upload/" -H "Authorization: Bearer tu_token" -F "file=@ruta/al/archivo.pdf"
-La respuesta incluirá el texto extraído, cualquier código QR detectado y mensajes de diagnóstico.
+    curl -X POST "http://127.0.0.1:8000/upload/" -H "Authorization: Bearer tu_token" -F "file=@ruta/al/archivo.pdf"
+    
+    La respuesta incluirá el texto extraído, cualquier código QR detectado y mensajes de diagnóstico.
 
 ## Endpoints
 POST /login: Autentica al usuario y devuelve un token de acceso.
