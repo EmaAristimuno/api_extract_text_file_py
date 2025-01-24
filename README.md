@@ -21,32 +21,27 @@ Este documento te guiará paso a paso para configurar un entorno virtual en Pyth
 
 **Windows:
 
-  ```bash
-    .venv\Scripts\activate
+`.venv\Scripts\activate`
 
 **macOS/Linux:
 
-```bash
-    source .venv/bin/activate
+`source .venv/bin/activate`
 
 ## Paso 3: Instalar Dependencias
  Con el entorno virtual activado, instala FastAPI y otras dependencias necesarias:
 
-```bash
- pip install fastapi python-multipart uvicorn PyPDF2
+`pip install fastapi python-multipart uvicorn PyPDF2`
 
 ## Paso 4: Ejecutar la Aplicación
 Crea un archivo main.py en el directorio de tu proyecto y añade el código necesario para tu aplicación FastAPI.
 
 Ejecutar la Aplicación: Para iniciar la aplicación, ejecuta el siguiente comando:
 
-```bash
- py main.py
+`py main.py`
 
 Esto iniciará un servidor local, y podrás acceder a tu aplicación FastAPI en http://127.0.0.1:8000.
 
 ## Paso 5: Desactivar el Entorno Virtual
 Cuando hayas terminado de trabajar en tu proyecto, puedes desactivar el entorno virtual ejecutando:
 
-```bash
- deactivate
+`deactivate`
