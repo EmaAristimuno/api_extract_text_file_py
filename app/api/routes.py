@@ -18,9 +18,11 @@ async def login(form_data: OAuth2PasswordRequestForm = Depends()):
 
 @router.post("/upload/")
 async def upload_file(
-    file: UploadFile = File(...), 
+    file: UploadFile = File(...), #analizar si enviamos el archivo como parámetro (base64)
     current_user: str = Depends(get_current_user),
-    extract_qr: bool = True  # Parámetro opcional para extraer QR
+    extract_qr: bool = True,  # Parámetro opcional para extraer QR
+    ollama_response: bool = False  # Parámetro opcional para procesar texto con Ollama
 ):
+    #return {"filename": file.filename, "current_user": current_user, "extract_qr": extract_qr, "ollama_response": ollama_response}
     processor = FileProcessor()
-    return await processor.process_file(file, extract_qr)
+    return await processor.process_file(file, extract_qr, ollama_response)

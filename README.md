@@ -18,6 +18,26 @@ Esta es una API desarrollada con FastAPI que permite a los usuarios subir archiv
 - Tesseract OCR instalado en el sistema (ajustar la ruta en el código si es necesario).
 - Dependencias listadas en `requirements.txt`.
 
+**Requisitos Adicionales**
+- Ollama: Herramienta para gestionar y descargar modelos de lenguaje.
+
+- Modelo de lenguaje: Un modelo específico que deseas utilizar con Ollama.
+
+*Instala Ollama en Windows*
+
+Visita el repositorio oficial de Ollama o la página de descargas para obtener la versión más reciente compatible con Windows.
+
+Verificar la instalación:
+
+Abre una terminal (CMD o PowerShell) y ejecuta:`ollama --version`
+
+*Pull de un Modelo con Ollama*
+
+Descarga un modelo específico, utiliza el comando pull. Por ejemplo, para descargar el modelo llama3.2:
+
+`ollama pull llama3.2`
+Esto descargará el modelo y lo preparará para su uso.
+
 ## Instalación
 
 1. Clona el repositorio:
